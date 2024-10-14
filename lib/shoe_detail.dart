@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geeksynergy/add_bag_button.dart';
 import 'package:geeksynergy/appbar.dart';
+import 'package:geeksynergy/payment_sheet.dart';
 
 class ShoeDetailScreen extends StatefulWidget {
   @override
@@ -245,7 +246,14 @@ class _ShoeDetailScreenState extends State<ShoeDetailScreen> {
                       ),
                     ),
                     SizedBox(height: 20),
-                    AddBagButton(buttonText: 'Add to Bag', onpressed: () {}),
+                    AddBagButton(
+                        buttonText: 'Add to Bag',
+                        onpressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (ctx) => PaymentScreen()));
+                        }),
                   ],
                 ),
               ),
